@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -11,8 +11,55 @@
 </head>
 
 <body>
-    <header>
-        <nav></nav>
+    <header class="md:w-10/12 mx-auto">
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li><a>Home</a></li>
+                            <li><a>Shop</a></li>
+                            <li><a>Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center">
+                        <div><img src="images/logo.webp" alt=""></div>
+                        <a class="btn btn-ghost text-xl">Peddyy</a>
+                    </div>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>Home</a></li>
+                        <li><a>Shop</a></li>
+                        <li><a>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn">Button</a>
+                </div>
+            </div>
+        </nav>
+        <section class="banner text-center mt-5">
+            <div>
+                <h4>Bringing Families Together ❤️‍🔥</h4>
+                <h1 class="text-5xl font-bold py-5">Your Path to Adoption Starts Here</h1>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                    looking at its
+                    layout. The point of using Lorem Ipsum is that it has a.</p>
+                <button class="btn btn-primary mt-5">View More</button>
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="images/pet.webp" alt="">
+            </div>
+        </section>
     </header>
     <main>
 
