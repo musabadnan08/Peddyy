@@ -8,9 +8,20 @@
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
+<body class="lato-font">
     <header class="md:w-10/12 mx-auto">
         <nav>
             <div class="navbar bg-base-100">
@@ -62,6 +73,7 @@
         </section>
     </header>
     <main class="md:w-10/12 mx-auto">
+        <!-- Category Section -->
         <section>
             <div class="text-center mt-5">
                 <h1 class="text-5xl font-bold py-5">Adopt Your Best Friend</h1>
@@ -69,9 +81,21 @@
                     looking at its
                     layout. The point of using Lorem Ipsum is that it has a.</p>
             </div>
-
-            <div id="categories" class="grid grid-cols-2 md:grid-cols-4 gap-10 py-5">
+            <div id="categories" class="grid grid-cols-2 md:grid-cols-4 gap-5 py-5">
             </div>
+        </section>
+        <!-- Pet Cards Section -->
+        <section>
+            <!-- <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6">
+                <div id="cards" class="md:col-span-3 lg:col-span-4">
+                    <div class="grid grid-cols-1">
+                    </div>
+                </div>
+                <div id="liked-pets" class="md:col-span-1 lg:col-span-2">
+                    <h2 class="bg-blue-100">b</h2>
+                </div>
+            </div> -->
+            <div id="cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-5"></div>
         </section>
     </main>
     <footer>
