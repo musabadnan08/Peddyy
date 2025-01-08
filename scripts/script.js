@@ -53,11 +53,11 @@ const displayCards = (pets) => {
     if (pets.length === 0) {
         cardContainer.classList.remove("grid");
         cardContainer.innerHTML = `
-        <div class="min-h-[500px] flex flex-col gap-5 justify-center items-center">
+        <div class="min-h-96 bg-slate-300 border-4 rounded-lg flex flex-col gap-5 justify-center items-center">
             <div>
             <img class="mx-auto" src="images/error.webp">
-            <h4 class="text-center">No Information Available</h4>
-            <p class="text-center">It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+            <h4 class="text-center text-3xl font-extrabold py-4">No Information Available</h4>
+            <p class="text-center text-l font-bold px-5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at
             its layout. The point of using Lorem Ipsum is that it has a.</p>
             </div>
         </div>
@@ -77,7 +77,7 @@ const displayCards = (pets) => {
         const allCards = document.createElement("div")
         allCards.classList = "card card-compact shadow-xl"
         allCards.innerHTML =
-            `<figure class="h-[200px]">
+            `<figure class="lg:h-[200px]">
             <img
             src="${card.image}"
             class="h-full w-full object-cover"
@@ -102,10 +102,14 @@ const displayCards = (pets) => {
             <p class="px-2">${card.price}</p>
             </div>
 
-            <div class="card-actions justify-between py-3">
-                <button class="btn bg-white text-green-900"><img class=w-7 src="${"https://img.icons8.com/?size=50&id=24816&format=png"}"/></button>
+            <div class="card-actions justify-between py-3 grid grid-cols-1">
+                <div class="flex items-center justify-between">
+                    <button class="btn bg-white text-green-900"><img class=w-7 src="${"https://img.icons8.com/?size=50&id=24816&format=png"}"/></button>
                 <button class="btn bg-white text-green-900 text-xl font-bold">Adopt</button>
-                <button onclick="loadDetails('${card.petId}')" class="btn bg-white text-green-900 text-xl font-bold">Details</button>
+                </div>
+                <div>
+                    <button onclick="loadDetails('${card.petId}')" class="btn btn-wide bg-white text-green-900 text-xl font-bold w-full">Details</button>
+                </div>
             </div>
         </div>`
         cardContainer.append(allCards);

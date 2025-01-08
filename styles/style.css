@@ -8,3 +8,6 @@
 .active-btn{
     background-color: brown;
 }
+html {
+  scroll-behavior: smooth;
+}
