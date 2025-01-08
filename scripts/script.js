@@ -123,6 +123,8 @@ const displayDetails = (petData) => {
     const property = "breed";
     const property2 = "date_of_birth";
     const property3 = "gender";
+    const property4 = "vaccinated_status";
+
     const modalContainer = document.getElementById("modal-content")
     modalContainer.innerHTML = `
     <div class="grid grid-cols-1">
@@ -133,25 +135,25 @@ const displayDetails = (petData) => {
     <div>
     <div class="flex">
         <img class=w-5 src="${"https://img.icons8.com/?size=64&id=k5wELv7XvOR6&format=png"}"/>
-        ${property in petData ? `<p class="px-2">${petData.breed}</p>` : `<p class="px-2">Breed Name Not Available</p>`}
+        ${property in petData ? `<p class="px-2">Breed: ${petData.breed}</p>` : `<p class="px-2">Breed Name Not Available</p>`}
     </div>
     <div class="flex">
         <img class=w-5 src="${"https://img.icons8.com/?size=64&id=JQyh0I18IaES&format=png"}"/>
-        ${property2 in petData && petData[property2] !== null ? `<p class="px-2">${petData.date_of_birth}</p>` : `<p class="px-2">Date of Birth Not Available</p>`}
+        ${property2 in petData && petData[property2] !== null ? `<p class="px-2">Birth: ${petData.date_of_birth}</p>` : `<p class="px-2">Date of Birth Not Available</p>`}
     </div>
     <div class="flex">
         <img class=w-5 src="${"https://img.icons8.com/?size=64&id=vgKCn1iIkmp9&format=png"}"/>
-        ${property3 in petData ? `<p class="px-2">${petData.gender}</p>` : `<p class="px-2">Gender is Undefined</p>`}
+        ${property3 in petData ? `<p class="px-2">Gender: ${petData.gender}</p>` : `<p class="px-2">Gender is Undefined</p>`}
     </div>
     </div>
     <div>
     <div class="flex">
         <img class=w-5 src="${"https://img.icons8.com/?size=64&id=xuQVdwxnqTRn&format=png"}"/>
-        <p class="px-2">${petData.price}</p>
+        <p class="px-2">Price: ${petData.price}</p>
     </div>
         <div class="flex">
         <img class=w-5 src="${"https://img.icons8.com/?size=64&id=k5wELv7XvOR6&format=png"}"/>
-        <p class="px-2">Vaccination Status: ${petData.vaccinated_status}</p>
+        ${property4 in petData && petData[property4] !== null ? `<p class="px-2">Vaccination Status: ${petData.vaccinated_status}</p>` : `<p class="px-2">Information Unavailable</p>`}
     </div>
     </div>
     </div>
