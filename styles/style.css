@@ -4,10 +4,6 @@
     font-family: "Lato", serif;
     /* font-style: normal; */
 }
-
-.active-btn{
-    background-color: brown;
-}
 html {
   scroll-behavior: smooth;
 }

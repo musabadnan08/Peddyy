@@ -17,10 +17,9 @@ const displayCategories = (categories) => {
         buttonContainer.onclick = () => loadC(item.category);//
         buttonContainer.innerHTML =
             `<div class="flex justify-center items-center">
-                <button id="${item.category}" class="btn btn-outline category-btn">
-                ${item.category}<img src="${item.category_icon}"></button>
+                <button id="${item.category}" class="btn">
+                <div class="max-h-5 flex items-center justify-center">${item.category}<img src="${item.category_icon}"></div></button>
             </div>`
-
         categoryContainer.append(buttonContainer);
     })
 }
@@ -32,7 +31,6 @@ const loadC = (id) => {
         .then((data) => {
             const activeBtn = document.getElementById(`${id}`)
             console.log(activeBtn)
-            activeBtn.classList.add("active-btn");
             displayCards(data.data)
         })
         .catch((error) => console.log(error))
@@ -58,8 +56,7 @@ const displayCards = (pets) => {
             <div>
             <img class="mx-auto" src="images/error.webp">
             <h4 class="text-center text-3xl font-extrabold py-4">No Information Available</h4>
-            <p class="text-center text-l font-bold px-5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at
-            its layout. The point of using Lorem Ipsum is that it has a.</p>
+            <p class="text-center text-l font-bold px-5">We're sorry, but it seems there's nothing to display right now. Please check back later!</p>
             </div>
         </div>
         `
@@ -125,6 +122,7 @@ const loadDetails = async (petId) => {
     const data = await res.json();
     displayDetails(data.petData)
 }
+
 const displayDetails = (petData) => {
     console.log(petData);
     const property = "breed";
@@ -171,20 +169,6 @@ const displayDetails = (petData) => {
     </div>
     `
     document.getElementById("customModal").showModal();
-}
-
-//
-const objDemo = {
-    "petId": 12,
-    "breed": "Poodle",
-    "category": "Dog",
-    "date_of_birth": "2023-08-10",
-    "price": 1500,
-    "image": "https://i.ibb.co.com/R9ZHvDD/pet-12.jpg",
-    "gender": "Female",
-    "pet_details": "This elegant female Poodle, born on August 10, 2023, is intelligent and eager to learn. Fully vaccinated and priced at $1500, she's perfect for families looking for a trainable and loving companion.",
-    "vaccinated_status": "Fully",
-    "pet_name": "Chloe"
 }
 
 // Liked Pets Corner

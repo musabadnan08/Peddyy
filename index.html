@@ -21,8 +21,8 @@
     </script>
 </head>
 
-<body class="lato-font">
-    <header class="md:w-11/12 lg:w-10/12 mx-auto">
+<body class="lato-font mx-auto">
+    <header class="sm:w-11/12 lg:w-10/12 mx-auto">
         <nav>
             <div class="navbar bg-base-100">
                 <div class="navbar-start">
@@ -62,10 +62,9 @@
         <section class="banner text-center mt-5">
             <div>
                 <h4>Bringing Families Together ❤️‍🔥</h4>
-                <h1 class="text-5xl font-bold py-5">Your Path to Adoption Starts Here</h1>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                    looking at its
-                    layout. The point of using Lorem Ipsum is that it has a.</p>
+                <h1 class="text-xl md:text-5xl font-extrabold py-5">Your Path to Adoption Starts Here</h1>
+                <p>"🐾 Find Your Furry Friend Today! 🐾
+                    Adopt, Love, and Change a Life. Your Perfect Companion Awaits!"</p>
                 <a class="btn btn-primary mt-5" href="#categories-section">View More</a>
             </div>
             <div class="flex justify-center items-center">
@@ -73,15 +72,14 @@
             </div>
         </section>
     </header>
-    <main class="md:w-11/12 lg:w-10/12 mx-auto">
+    <main class="sm:w-11/12 lg:w-10/12 mx-auto">
 
         <!-- Category Section -->
         <section id="categories-section">
             <div class="text-center mt-5">
-                <h1 class="text-5xl font-bold py-5">Adopt Your Best Friend</h1>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                    looking at its
-                    layout. The point of using Lorem Ipsum is that it has a.</p>
+                <h1 class="text-xl md:text-5xl font-extrabold py-5">Adopt Your Best Friend</h1>
+                <p>"🐾 Find Your Furry Friend Today! 🐾
+                    Adopt, Love, and Change a Life. Your Perfect Companion Awaits!"</p>
             </div>
             <div id="categories" class="grid grid-cols-2 md:grid-cols-4 gap-5 py-5">
             </div>
@@ -90,23 +88,23 @@
         <!-- Pet Cards Section -->
         <section id="pet-cards-section">
             <div class="flex items-center justify-between py-5 bg-slate-100 px-4 rounded-lg mb-4">
-                <h1 class="md:text-2xl font-extrabold">Best Deals For You</h1>
+                <h1 class="md:text-xl font-extrabold">Best Deals For You</h1>
                 <button class="btn btn-primary">Sort By Price (Descending)</button>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-8 gap-2">
-
+                <!--  -->
                 <div class="md:col-span-5 lg:col-span-6">
                     <div id="cards" class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 ">
                     </div>
                 </div>
-
+                <!--  -->
                 <div class="md:col-span-3 lg:col-span-2 bg-slate-100 rounded-xl min-h-96">
                     <h1 class="text-center text-xl font-bold py-4">Adorable Pets...❤️</h1>
                     <div id="likedPetsContainer" class="grid grid-cols-1 lg:grid-cols-2 gap-2 px-4">
                     </div>
                 </div>
-
+                <!--    -->
             </div>
 
             <!-- Modal -->
@@ -132,18 +130,13 @@
                         <h2 class="text-xl font-extrabold">Congratulations.🎉</h2>
                         <h2 class="text-xl font-extrabold">Adopting in...</h2>
                         <h2 id="countdown" class="text-xl font-extrabold"></h2>
-                        <!-- <div id="modal-content2"></div>
-                        <div class="modal-action">
-                            <form method="dialog">
-                                <button class="btn">Close</button>
-                            </form>
-                        </div> -->
                     </div>
                 </dialog>
             </div>
         </section>
 
     </main>
+
     <footer id="footer" class="mt-16 gap-4 md:flex items-center justify-between bg-black text-white p-10 f">
         <nav class="grid grid-cols-1">
             <div class="flex gap-2">
@@ -166,11 +159,9 @@
         </nav>
         <form>
             <h6 class="text-xl text-stone-500 font-semibold">Drop A Message</h6>
-            <fieldset class="form-control w-80 mt-4">
-                <div class="join grid grid-cols-1 gap-2">
-                    <input type="text" placeholder="Enter Your Email" class="input text-black font-bold" />
-                    <button class="btn btn-primary">Subscribe</button>
-                </div>
+            <fieldset class="form-control mt-4">
+                <input type="text" placeholder="Enter Your Email" class="my-2 input text-black max-w-44" />
+                <button class="btn btn-primary w-44">Subscribe</button>
             </fieldset>
         </form>
     </footer>
