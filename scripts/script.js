@@ -1,4 +1,4 @@
-// All Categories
+// Load and Display All Categories
 const loadCategories = () => {
     fetch("https://openapi.programming-hero.com/api/peddy/categories")
         .then((res) => res.json())
@@ -25,6 +25,7 @@ const displayCategories = (categories) => {
     })
 }
 
+// Pet Data by different ID
 const loadC = (id) => {
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
         .then((res) => res.json())
@@ -37,7 +38,7 @@ const loadC = (id) => {
         .catch((error) => console.log(error))
 }
 
-// All Cards
+// Load and Display All Cards
 const loadCards = () => {
     fetch("https://openapi.programming-hero.com/api/peddy/pets")
         .then((res) => res.json())
@@ -105,7 +106,7 @@ const displayCards = (pets) => {
             <div class="card-actions justify-between py-3 grid grid-cols-1">
                 <div class="flex items-center justify-between">
                     <button onclick="likedPets('${card.image}')" class="btn bg-white text-green-900"><img class=w-7 src="${"https://img.icons8.com/?size=50&id=24816&format=png"}"/></button>
-                <button class="btn bg-white text-green-900 text-xl font-bold">Adopt</button>
+                <button id="buttonbutton" onclick="adoptedText(this)" class="btn bg-white text-green-900 text-xl font-bold">Adopt</button>
                 </div>
                 <div>
                     <button onclick="loadDetails('${card.petId}')" class="btn btn-wide bg-white text-green-900 text-xl font-bold w-full">Details</button>
@@ -115,6 +116,8 @@ const displayCards = (pets) => {
         cardContainer.append(allCards);
     })
 }
+
+// Load and Display Details For Modal
 const loadDetails = async (petId) => {
     console.log(petId)
     const uri = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`
@@ -169,6 +172,7 @@ const displayDetails = (petData) => {
     `
     document.getElementById("customModal").showModal();
 }
+
 //
 const objDemo = {
     "petId": 12,
@@ -183,6 +187,7 @@ const objDemo = {
     "pet_name": "Chloe"
 }
 
+// Liked Pets Corner
 const likedPets = (image) => {
     const likePetsContainer = document.getElementById("likedPetsContainer")
     const div = document.createElement("div");
@@ -190,5 +195,23 @@ const likedPets = (image) => {
     <img class="w-full" src="${image}">
     `
     likePetsContainer.appendChild(div)
+}
 
+// Adopt Button
+const adoptedText = (button) => {
+    const countdownTime = document.getElementById("countdown");
+    const customModal2 = document.getElementById("customModal2")
+    customModal2.showModal();
+    let countdown = 3;
+    countdownTime.textContent = countdown;
+    const interval = setInterval(() => {
+        countdown -= 1;
+        countdownTime.textContent = countdown;
+        if (countdown === 0) {
+            clearInterval(interval);
+            customModal2.close();
+            button.disabled = true
+            button.innerText = "Adopted";
+        }
+    }, 1000)
 }
