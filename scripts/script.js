@@ -104,7 +104,7 @@ const displayCards = (pets) => {
 
             <div class="card-actions justify-between py-3 grid grid-cols-1">
                 <div class="flex items-center justify-between">
-                    <button class="btn bg-white text-green-900"><img class=w-7 src="${"https://img.icons8.com/?size=50&id=24816&format=png"}"/></button>
+                    <button onclick="likedPets('${card.image}')" class="btn bg-white text-green-900"><img class=w-7 src="${"https://img.icons8.com/?size=50&id=24816&format=png"}"/></button>
                 <button class="btn bg-white text-green-900 text-xl font-bold">Adopt</button>
                 </div>
                 <div>
@@ -181,4 +181,14 @@ const objDemo = {
     "pet_details": "This elegant female Poodle, born on August 10, 2023, is intelligent and eager to learn. Fully vaccinated and priced at $1500, she's perfect for families looking for a trainable and loving companion.",
     "vaccinated_status": "Fully",
     "pet_name": "Chloe"
+}
+
+const likedPets = (image) => {
+    const likePetsContainer = document.getElementById("likedPetsContainer")
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <img class="w-full" src="${image}">
+    `
+    likePetsContainer.appendChild(div)
+
 }
